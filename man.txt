@@ -1,0 +1,27 @@
+
+Pour utiliser le script "pushit" dans le terminal comme une commande native de ubuntu, placer le fichier
+"pushit" dans le dossier "/usr/bin", ou un taper dans le terminal "echo $PATH" pour connaitre les autres
+dossiers « spéciaux ».
+
+Verifier que vous avez bien les droits d'execusion représenté par un x avec un "ls -l",
+au besoin pour ajouter le droit taper "chmod +x pushit".
+
+La commande pushit prend comme parametre:
+ "n" pour initialiser git et faire un "first commit" l'addresse du depot github vous sera demandé,
+     entrez une adresse https si vous ne disposez pas d'une clé SSH, exemple "https://github.com/user/
+     repo.git" ou pour le ssh une adresse type "git@github.com:user/repo.git".
+  
+ "p" pour faire un push direct sur un git deja initialisé, un commentaire vous sera demandez.
+
+
+     Exemple d'utilisation:
+                           user@pc:~/dossier$ pushit (sans parametre elle vous invitera a en taper un)
+          
+                           user@pc:~/dossier$ pushit n (pour init et push un nouveau repo)
+
+                           user@pc:~/dossier$ pushit p (pour push un repo existant)
+                              
+
+
+
+créé par Julien Bardin.

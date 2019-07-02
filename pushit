@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ -z $1 ]
+  then
+    read -p "entrez n pour un nouveau depot git ou p pour un depot existant: " reponse
+    if [ $reponse = "n" ] 2> /dev/null || [ $reponse = "p" ] 2> /dev/null
+      then
+        set $reponse
+      fi  
+  fi
+if [ -n $1 ]
+  then  
+    case $1 in
+              "n")
+                  git init
+                  git add .
+                  read -r -p "entrer l'addresse de remote: " reponse
+                  git remote add origin $reponse
+                  git commit -m "first commit"
+                  git push -u origin master
+                  ;;
+              "p")
+                  git add .
+                  read -r -p "entrer un commentaire: " reponse
+                  git commit -m "$reponse"
+                  git push -u origin master
+                  ;;
+              *)
+                  echo " aucune correspondance, entrez n pour un nouveau depot git ou p pour un depot existant"
+                  ;;
+    esac 
+  fi  
